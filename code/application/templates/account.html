@@ -1,0 +1,25 @@
+{% include "layout.html" %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 text-center">
+            
+            {% for account in accounts %}
+            <dl>
+                <dd>Customer ID: {{ account.cid}}</dd>
+                <dd>Account ID : {{account.acid}}</dd>
+                <dd>Account type: {{ account.actype}}</dd>
+                <dd>Minimum Balance available: {{account.damount}}</dd>
+                <dd>Account Balance: {{account.Depositedamount}}</dd>
+                
+                
+            </dl>
+            {% else %}
+
+                <h3>No accounts yet!</h3>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

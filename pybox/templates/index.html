@@ -1,0 +1,14 @@
+<!doctype html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css1.css')}}">
+</head>
+<body>
+    <form action = "/results" method = "POST">
+        <input type="url" name="url" value="" required ><br>
+        <input type="text" name="code" value="" required><br>
+        
+        <p><input type="submit" value="Shorten"></p>
+    </form>
+
+</body>
+</html>

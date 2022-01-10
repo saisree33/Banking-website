@@ -1,0 +1,61 @@
+<html>
+    <head></head>
+    <div class="container">
+        {% include "layout.html" %}
+    
+        {% block content %}
+        {% endblock %}
+    
+    </div>
+    
+    <div class="he"> <h1>Register</h1></div>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/register.css')}}"/>
+    
+      <body>
+       
+        
+        <div class="bo">
+            <form name="login" action="" method="POST">
+                
+                {{ form.hidden_tag() }}  
+                <p> {{ form.name.label }}</br>
+                    {{ form.name }}
+                    {% for error in form.name.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+                
+                <p> {{ form.mail.label }}</br>
+                    {{ form.mail }}
+                    {% for error in form.mail.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+            
+                <p> {{ form.password.label }}</br>
+                    {{ form.password }}
+                    {% for error in form.password.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+            
+                <p> {{ form.password_confirm.label }}</br>
+                    {{ form.password_confirm }}
+                    {% for error in form.password_confirm.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+            
+                
+                
+            
+                <p> 
+                    {{ form.submit() }}
+                </p>
+            
+  
+<br><br>
+            </form>
+        </div>
+    </body>
+</html>

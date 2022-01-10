@@ -1,0 +1,123 @@
+<html>
+    <head></head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/homepage.css')}}"/>
+    
+    <div class="hea"><br><h1>&ensp;ABC BANK<br><br></h1></div>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      
+      .he{
+          text-align: center;
+          background-color:black;
+          color: yellow;
+          
+      }  
+      .dropbtn {
+        background-color:yellow;
+        color: black;
+        
+        font-size: 16px;
+        border: none;
+      }
+      
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropdown-content a:hover {background-color: white;}
+      
+      .dropdown:hover .dropdown-content {display:block;  }
+      
+      .dropdown:hover .dropbtn {color:black; }
+      </style>
+      </head>
+      <body>
+      <div class="opt">
+      <a href="{{url_for('home') }}">Home</a>&ensp;&ensp;&ensp;
+      <a href="{{url_for('login') }}">Login</a>&ensp;&ensp;&ensp;
+      <a href="{{url_for('register') }}">Register</a>&ensp;&ensp;&ensp;
+      
+      
+      <div class="dropdown">
+        <button class="dropbtn">Customer Management</button>
+        <div class="dropdown-content">
+          
+          <a href="{{url_for('cc')}}">Create Customer</a>
+          
+          <a href="{{url_for('updatecustomer')}}">Update Customer</a>
+          <a href="{{url_for('deletecustomer')}}">Delete Customer</a>
+          
+        </div>
+      </div>&ensp;&ensp;&ensp;
+      <div class="dropdown">
+        <button class="dropbtn">Account Management</button>
+        <div class="dropdown-content">
+          <a href="{{url_for('createaccount')}}">Create Account</a>
+          <a href="{{url_for('deleteaccount')}}">Delete Account</a>
+          
+        </div>
+      </div>&ensp;&ensp;&ensp;
+      <div class="dropdown">
+        <button class="dropbtn">Status Details</button>
+        <div class="dropdown-content">
+          <a href="{{url_for('customerstatus') }}">Customer Status</a>
+          <a href="{{url_for('accountstatus')}}">Account Status</a>
+          
+        </div>&ensp;&ensp;&ensp;
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Account operations</button>
+        <div class="dropdown-content">
+          <a href="{{url_for('customersearch') }}">Customer Search</a>
+          <a href="{{url_for('accountstatement') }}">Account Search</a>
+          <a href="{{url_for('deposit') }}">Deposit Money</a>
+          <a href="{{url_for('withdraw') }}">Withdraw Money</a>
+          <a href="{{url_for('transfer') }}">Transfer Money </a>
+          <a href="{{url_for('accountsearch') }}">Account Statement</a>
+        </div>
+      </div>&ensp;&ensp;&ensp;&ensp;
+      <a href="{{url_for('logout')}}">Log out</a>
+      
+      </div>
+      <br><br>
+      <div class="he"><br> <br><h1>Welcome to ABC Bank</h1><br><br></div>
+
+      
+      <div class="container">
+       
+    
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{category}}">
+                        <p>{{ message }}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    
+        {% block content %}
+        {% endblock %}
+    </div>
+    </div>
+    </body>
+    
+      </html>

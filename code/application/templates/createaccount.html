@@ -1,0 +1,59 @@
+<html>
+    <head></head>
+    <div class="container">
+        {% include "layout.html" %}
+    
+        {% block content %}
+        {% endblock %}
+    
+    </div>
+    <div class="he"> <h1>Create Account</h1></div>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/createcustomer.css')}}"/>
+    
+      <body>
+        <div class="bo">
+            <form name="createaccount" action="" method="POST">
+                {{ form.hidden_tag() }}  
+                <p> {{ form.cid.label }}</br>
+                    {{ form.cid }}
+                    {% for error in form.cid.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+                
+                <p> {{ form.acid.label }}</br>
+                    {{ form.acid }}
+                    {% for error in form.acid.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+            
+                <p> {{ form.actype.label }}</br>
+                    {{ form.actype }}
+                    {% for error in form.actype.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+            
+                <p> {{ form.damount.label }}</br>
+                    {{ form.damount }}
+                    {% for error in form.damount.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+                
+            
+                
+                
+            
+                <p> 
+                    {{ form.submit() }}
+                </p>
+            
+  
+<br><br>
+
+            </form>
+        </div>
+    </body>
+</html>

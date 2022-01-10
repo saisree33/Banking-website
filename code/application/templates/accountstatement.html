@@ -1,0 +1,42 @@
+<html>
+    <head></head>
+    <div class="container">
+        {% include "layout.html" %}
+    
+        {% block content %}
+        {% endblock %}
+    
+    </div>
+    <div class="he"> <h1>Account Statement</h1></div>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/createcustomer.css')}}"/>
+    
+      <body>
+        <div class="bo">
+            <form name="accountstatement" action="" method="POST">
+                {{ form.hidden_tag() }}  
+                <p> {{ form.acid.label }}</br>
+                    {{ form.acid }}
+                    {% for error in form.acid.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+                
+                
+            
+                
+                
+            
+                <p> 
+                    {{ form.submit() }}
+                </p>
+            
+  
+<br><br>
+                  
+            
+            
+            </form>    
+            <a href="/">Return to Homepage</a> 
+            </div>
+            </body>
+            </html>

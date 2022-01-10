@@ -1,0 +1,24 @@
+{% include "layout.html" %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 text-center">
+            
+            {% for p in x %}
+            <dl>
+                <dd>SSN ID: {{ p.SSN}}</dd>
+                <dd>Customer Name: {{p.cname}}</dd>
+                <dd>Age: {{p.age}}</dd>
+                <dd>Address: {{ p.address}}</dd>
+                <dd>State: {{p.state}}</dd>
+                <dd>City: {{p.city}}</dd>
+            </dl>
+            {% else %}
+
+                <h3>No Customer with the enter SSN ID , Enter a valid SSN ID</h3>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% include "layout.html" %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 text-center">
+            
+            {% for customer in customers %}
+            <dl>
+                <dd>SSN ID: {{ customer.SSN}}</dd>
+                <dd>Customer Name : {{customer.cname}}</dd>
+                <dd>Age: {{ customer.age}}</dd>
+                <dd>Address: {{customer.address}}</dd>
+                <dd>State: {{ customer.state}}</dd>
+                <dd>City : {{customer.city}}</dd>
+                
+            </dl>
+            {% else %}
+
+                <h3>No customers yet!</h3>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

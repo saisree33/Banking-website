@@ -1,0 +1,54 @@
+<html>
+    <head></head>
+    <div class="container">
+        {% include "layout.html" %}
+    
+        {% block content %}
+        {% endblock %}
+    
+    </div>
+    <div class="he"> <h1>Transfer</h1></div>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/createcustomer.css')}}"/>
+    
+      <body>
+        <div class="bo">
+            <form name="transfer" action="" method="POST">
+                {{ form.hidden_tag() }}  
+                <p> {{ form.acid1.label }}</br>
+                    {{ form.acid1 }}
+                    {% for error in form.acid1.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+
+                <p> {{ form.acid2.label }}</br>
+                    {{ form.acid2 }}
+                    {% for error in form.acid2.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+                
+                <p> {{ form.damount.label }}</br>
+                    {{ form.damount }}
+                    {% for error in form.damount.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+            
+                
+                
+            
+                <p> 
+                    {{ form.submit() }}
+                </p>
+            
+  
+<br><br>
+                  
+            
+            
+            </form>    
+            <a href="/">Return to Homepage</a> 
+            </div>
+            </body>
+            </html>

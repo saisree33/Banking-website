@@ -1,0 +1,16 @@
+div.bo {
+    border: 1px solid black;
+    padding-top: 50px;
+    padding-right: 200px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+    background-color:yellow;
+    
+  }
+
+div.he {
+  background-color: black;
+  text-align: center;
+  color: yellow;
+}
+  

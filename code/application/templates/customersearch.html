@@ -1,0 +1,42 @@
+<html>
+    <head></head>
+    <div class="container">
+        {% include "layout.html" %}
+    
+        {% block content %}
+        {% endblock %}
+    
+    </div>
+    <div class="he"> <h1>Customer Search</h1></div>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/createcustomer.css')}}"/>
+    
+      <body>
+        <div class="bo">
+            <form name="customersearch" action="" method="POST">
+                {{ form.hidden_tag() }}  
+                <p> {{ form.SSN.label }}</br>
+                    {{ form.SSN }}
+                    {% for error in form.SSN.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+                
+                
+            
+                
+                
+            
+                <p> 
+                    {{ form.submit() }}
+                </p>
+            
+  
+<br><br>
+                  
+            
+            
+            </form>    
+            <a href="/">Return to Homepage</a> 
+            </div>
+            </body>
+            </html>

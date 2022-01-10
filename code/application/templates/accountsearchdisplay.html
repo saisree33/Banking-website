@@ -1,0 +1,24 @@
+{% include "layout.html" %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 text-center">
+            
+            {% for p in x %}
+            <dl>
+                <dd>Customer ID: {{ p.cid}}</dd>
+                <dd>Account ID: {{p.acid}}</dd>
+                <dd>Account Type: {{p.actype}}</dd>
+                <dd>Minimum Balance Available: {{ p.damount}}</dd>
+                <dd>Account Balance: {{ p.Depositedamount}}</dd>
+                
+            </dl>
+            {% else %}
+
+                <h3>No Account with the enter Account ID , Enter a valid Account ID</h3>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

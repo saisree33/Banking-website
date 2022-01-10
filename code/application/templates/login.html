@@ -1,0 +1,42 @@
+<html><head></head>
+<div class="container">
+    {% include "layout.html" %}
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+
+   <div class="he"> <h1>Login</h1></div>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/loginpage.css')}}"/>
+    
+      <body>
+        <div class="bo">
+            <form name="login" action="" method="POST" novalidate>
+                {{ form.hidden_tag() }}
+
+                <p>
+                    {{ form.mail.label }}<br>
+                    {{ form.mail(size=35) }}
+                    {% for error in form.mail.errors %}
+                        <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.password.label }}<br>
+                    {{ form.password(size=15) }}
+                    {% for error in form.password.errors %}
+                        <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </p>
+
+                <p>
+                    {{ form.submit() }}
+                </p>
+  <a href="{{url_for('register')}}">Register here</a>
+
+            </form>
+        </div>
+    </body>
+
+</html>
